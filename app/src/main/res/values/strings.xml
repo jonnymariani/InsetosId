@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Identificacão de Insetos</string>
-    <string name="action_settings">Settings</string>
+    <!--    Menu  -->
+    <string name="action_settings">Configurações</string>
+    <string name="action_comuns">Insetos Comuns</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -10,7 +12,6 @@
     <string name="cancelar">Cancelar</string>
     <string name="carregando">Carregando...</string>
     <string name="erroCameraNaoEncontrada">Erro: Câmera não encontrada.</string>
-
 
 
 </resources>

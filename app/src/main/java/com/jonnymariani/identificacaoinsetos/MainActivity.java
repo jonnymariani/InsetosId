@@ -365,6 +365,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if(id == R.id.action_comuns)
+        {
+            Intent intencao = new Intent(this, ComunsActivity.class);
+            startActivity(intencao);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
