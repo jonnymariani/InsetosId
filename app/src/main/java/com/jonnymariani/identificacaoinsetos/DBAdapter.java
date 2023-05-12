@@ -141,7 +141,7 @@ public class DBAdapter {
 
     //Busca config por param
     public Cursor BuscaConfig(String param) throws SQLException {
-        Cursor mCursor = db.query(DATABASE_TABLE_CONFIG, COLUNAS_CONFIG, KEY_PARAM + " = " + param, null, null, null, null, null);
+        Cursor mCursor = db.query(DATABASE_TABLE_CONFIG, COLUNAS_CONFIG, KEY_PARAM + " = '" + param + "'", null, null, null, null, null);
 
         if (mCursor != null) {
             mCursor.moveToFirst();
@@ -150,6 +150,15 @@ public class DBAdapter {
     }
 
     //Atualiza historico
+    public boolean atualizaConfig(long id, String param, String value) {
+        ContentValues dados = new ContentValues();
+        String linhaAcessada = MontaRowID(id);
+
+        dados.put(KEY_PARAM, param);
+        dados.put(KEY_VALUE, value);
+
+        return db.update(DATABASE_TABLE_CONFIG, dados, linhaAcessada, null) > 0;
+    }
     public boolean atualizaHistorico(long id, String nome, String data) {
         ContentValues dados = new ContentValues();
         String linhaAcessada = MontaRowID(id);
@@ -158,5 +167,10 @@ public class DBAdapter {
         dados.put(KEY_DATA, data);
 
         return db.update(DATABASE_TABLE_HISTORICO, dados, linhaAcessada, null) > 0;
+    }
+
+    public void limparHistorico(){
+        db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE_HISTORICO);
+        db.execSQL(DATABASE_CRIA_HISTORICO);
     }
 }

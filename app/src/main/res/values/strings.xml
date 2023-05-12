@@ -3,15 +3,20 @@
     <!--    Menu  -->
     <string name="action_settings">Configurações</string>
     <string name="action_comuns">Insetos Comuns</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+
+    <!--Configuracoes-->
+    <string name="cfgAbrirDiretoCamera">Iniciar aplicativo com menu de seleção aberto.</string>
+    <string name="cfgLimparHistorico">Limpar Histórico</string>
+    <string name="cfgLimparHistoricoSucesso">Histórico limpo com sucesso!</string>
+
 
     <string name="tirarFoto">Tirar Foto</string>
     <string name="galeria">Galeria</string>
     <string name="cancelar">Cancelar</string>
     <string name="carregando">Carregando...</string>
     <string name="erroCameraNaoEncontrada">Erro: Câmera não encontrada.</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
 
 
 </resources>

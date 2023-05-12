@@ -191,12 +191,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 builder.show();
-
-
-
-
             }
         });
+
+
+        conexaoDB.open();
+        Cursor c2 =  conexaoDB.BuscaConfig("ABRIR_NA_CAMERA");
+        conexaoDB.close();
+
+        int indexValue = c2.getColumnIndex("value");
+        String configValue = c2.getString(indexValue);
+
+        boolean AbrirCamera = configValue.equals("TRUE");
+
+        if (AbrirCamera){
+            binding.fab.performClick();
+        }
+
     }
 
     @Override
@@ -362,7 +373,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent intencao = new Intent(this, SettingActivity.class);
+            startActivity(intencao);
         }
 
         if(id == R.id.action_comuns)
