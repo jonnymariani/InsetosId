@@ -66,11 +66,11 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imgGoogle"
                     android:layout_width="70dp"
                     android:layout_height="070dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                    app:layout_constraintEnd_toStartOf="@+id/imgWikipedia"
                     app:layout_constraintHorizontal_bias="0.439"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -78,26 +78,18 @@
                     app:srcCompat="@drawable/chrome_icon" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imgWikipedia"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toEndOf="@+id/imgGoogle"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/wikipedia_icon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnWikipedia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wikipedia"
-            tools:layout_editor_absoluteX="141dp"
-            tools:layout_editor_absoluteY="476dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

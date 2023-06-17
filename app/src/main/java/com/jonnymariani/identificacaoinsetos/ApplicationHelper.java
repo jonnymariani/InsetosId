@@ -29,5 +29,15 @@ public class  ApplicationHelper {
         return defaultBrowser;
     }
 
+    public static Intent AbreGoogle(String nome) throws UnsupportedEncodingException {
+
+        String nomeEncoded = URLEncoder.encode(nome, StandardCharsets.UTF_8.toString());
+        String url = "https://www.google.com/search?q=" + nomeEncoded;
+
+        Intent defaultBrowser = ApplicationHelper.PreparaNavegador(url);
+
+        return defaultBrowser;
+    }
+
 
 }

@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
             String nome = c.getString(index);
 
             try {
-                Intent defaultBrowser = ApplicationHelper.AbreWikipedia(nome);
+                Intent defaultBrowser = ApplicationHelper.AbreGoogle(nome);
                 startActivity(defaultBrowser);
             } catch (UnsupportedEncodingException e) {
                 throw new RuntimeException(e);

@@ -25,8 +25,9 @@ import java.net.URL;
 public class ResultActivity extends AppCompatActivity {
 
     private ImageView imgResult;
+    private ImageView imgGoogle;
+    private ImageView imgWikipedia;
     private TextView txtResult;
-    private Button btnWikipedia;
 
 
     @Override
@@ -35,8 +36,9 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         imgResult = (ImageView) findViewById(R.id.img_Result);
+        imgGoogle = (ImageView) findViewById(R.id.imgGoogle);
+        imgWikipedia = (ImageView) findViewById(R.id.imgWikipedia);
         txtResult = (TextView)findViewById(R.id.txt_Result);
-        btnWikipedia = (Button) findViewById(R.id.btnWikipedia);
 
         Bundle extras = getIntent().getExtras();
         String response = extras.getString("result");
@@ -47,11 +49,11 @@ public class ResultActivity extends AppCompatActivity {
         try {
             responseAPI = mapper.readValue(response, InsectApiResponse.class);
 
-            String nome = responseAPI.getResult().getClassification().getSuggestions().get(0).name;
+            String nome = responseAPI.getResult().getClassification().getSuggestions().get(0).name.toUpperCase();
 
             txtResult.setText(nome);
 
-            btnWikipedia.setOnClickListener(new View.OnClickListener() {
+            imgWikipedia.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent browser = null;
@@ -63,6 +65,20 @@ public class ResultActivity extends AppCompatActivity {
                     }
                 }
             });
+
+            imgGoogle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent browser = null;
+                    try {
+                        browser = ApplicationHelper.AbreGoogle(nome);
+                        startActivity(browser);
+                    } catch (UnsupportedEncodingException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+
 
             //Carrega imagem do resultado na view
             String imgUrl = responseAPI.getResult().getClassification().getSuggestions().get(0).getSimilar_images().get(0).url;
