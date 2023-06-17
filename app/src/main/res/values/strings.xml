@@ -1,22 +1,28 @@
 <resources>
     <string name="app_name">Identificacão de Insetos</string>
-    <!--    Menu  -->
+
+    <!--Menu-->
     <string name="action_settings">Configurações</string>
     <string name="action_comuns">Insetos Comuns</string>
 
-    <!--Configuracoes-->
+    <!--Activity Main-->
+    <string name="title_banner_main">LISTA DE INSETOS</string>
+
+    <!--Activity Setting-->
+    <string name="title_banner_settings">CONFIGURAÇÕES</string>
     <string name="cfgAbrirDiretoCamera">Iniciar aplicativo com menu de seleção aberto.</string>
     <string name="cfgLimparHistorico">Limpar Histórico</string>
     <string name="cfgLimparHistoricoSucesso">Histórico limpo com sucesso!</string>
+    <string name="cfgTema">Modo Aranha carangueijo / Escorpião negro</string>
 
-
+    <!--Activity Comuns-->
+    <string name="title_banner_list_row">LISTA DE INSETOS COMUNS</string>
     <string name="tirarFoto">Tirar Foto</string>
     <string name="galeria">Galeria</string>
     <string name="cancelar">Cancelar</string>
     <string name="carregando">Carregando...</string>
     <string name="erroCameraNaoEncontrada">Erro: Câmera não encontrada.</string>
     <string name="title_activity_settings">SettingsActivity</string>
-
 
 
 </resources>

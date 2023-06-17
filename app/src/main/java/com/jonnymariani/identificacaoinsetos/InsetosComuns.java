@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +24,14 @@ public class InsetosComuns {
 
     private void AdicionaInsetos()
     {
-        this.lista.add(CriaInseto("Escorpião", R.drawable.escorpiao));
+        this.lista.add(CriaInseto("Abelha", R.drawable.abelha));
         this.lista.add(CriaInseto("Aranha", R.drawable.aranha));
+        this.lista.add(CriaInseto("Barbeiro", R.drawable.barbeiro));
+        this.lista.add(CriaInseto("Escorpião", R.drawable.escorpiao));
+        this.lista.add(CriaInseto("Mosca", R.drawable.mosca));
+        this.lista.add(CriaInseto("Mosquito", R.drawable.mosquito));
+        this.lista.add(CriaInseto("Taturana", R.drawable.taturana));
+        this.lista.add(CriaInseto("Vespa", R.drawable.vespa));
     }
 
     private Inseto CriaInseto(String nome, int idImg)

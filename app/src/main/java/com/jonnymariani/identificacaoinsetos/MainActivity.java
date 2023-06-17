@@ -52,6 +52,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -86,13 +87,15 @@ public class MainActivity extends AppCompatActivity {
     ListView listViewHistorico;
     private ActivityMainBinding binding;
     String root = Environment.getExternalStorageDirectory().toString() + "/imagens_id_insetos";
+    Switch swtCfgTema;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(binding.getRoot());
+
 
         setSupportActionBar(binding.toolbar);
 
@@ -104,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
         Cursor c =  conexaoDB.listarHistorico();
         listViewHistorico.setAdapter(new HistoricoAdapter(getApplicationContext(), c));
         conexaoDB.close();
+
+
 
 
         activityResultLauncherCamera =  registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
