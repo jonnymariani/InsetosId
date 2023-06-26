@@ -90,6 +90,39 @@ class Input{
     public void setSimilar_images(boolean similar_images) {
         this.similar_images = similar_images; }
     boolean similar_images;
+
+    public String getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(String datetime) {
+        this.datetime = datetime;
+    }
+
+    @JsonProperty("datetime")
+    String datetime;
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    @JsonProperty("longitude")
+    String longitude;
+
+    @JsonProperty("latitude")
+    String latitude;
 }
 
 class Details{
